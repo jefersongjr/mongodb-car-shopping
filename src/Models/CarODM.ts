@@ -13,7 +13,7 @@ class CarODM {
     constructor() {
         this.schema = new Schema<ICar>({
             model: { type: String, required: true },
-            year: { type: String, required: true },
+            year: { type: Number, required: true },
             color: { type: String, required: true },
             status: { type: Boolean, required: true },
             buyValue: { type: Number, required: true },

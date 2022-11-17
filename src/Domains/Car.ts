@@ -1,7 +1,7 @@
 class Car {
    private id: string | undefined;
    private model: string;
-   private year: string;
+   private year: number;
    private  color: string;
    private status: boolean;
    private buyValue: number;
@@ -11,7 +11,7 @@ class Car {
    constructor(
     id: string | undefined,
     model: string,
-    year: string,
+    year: number,
     color: string,
     status: boolean,
     buyValue: number,
@@ -44,7 +44,7 @@ class Car {
     return this.model;
    }
 
-   public setYear(year: string) {
+   public setYear(year: number) {
     this.year = year;
    }
 
