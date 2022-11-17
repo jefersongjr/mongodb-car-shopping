@@ -25,7 +25,7 @@ class Car {
     this.status = status;
     this.buyValue = buyValue;
     this.doorsQty = doorsQty;
-    this.seatsQty = doorsQty;
+    this.seatsQty = seatsQty;
    }
 
    public setId(id: string) {
