@@ -25,3 +25,5 @@ class CarService {
     return this.createCarDomain(newCar)
     }
 }
+
+export default CarService;
