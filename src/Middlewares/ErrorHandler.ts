@@ -1,14 +1,15 @@
 import { NextFunction, Request, Response } from 'express';
+import ThrowException from './exceptions/ThrowException';
 
 class ErrorHandler {
   public static handle(
     error: Error,
     _req: Request,
     res: Response,
-    next: NextFunction,
+    _next: NextFunction,
   ) {
-    res.status(500).json({ message: error.message });
-    next();
+    const { status = 500, message } = error as ThrowException;
+    return res.status(status).json({ message });
   }
 }
 
