@@ -1,16 +1,16 @@
-import ICar from "../Interfaces/ICar";
+import ICar from '../Interfaces/ICar';
 
 class Car {
-   protected id: string | undefined;
-   protected model: string;
-   protected year: number;
-   protected  color: string;
-   protected status: boolean | undefined ;
-   protected buyValue: number;
-   private doorsQty: number;
-   private seatsQty: number;
+  protected id: string | undefined;
+  protected model: string;
+  protected year: number;
+  protected color: string;
+  protected status: boolean | undefined ;
+  protected buyValue: number;
+  private doorsQty: number;
+  private seatsQty: number;
 
-   constructor(car : ICar) {
+  constructor(car : ICar) {
     this.id = car.id;
     this.model = car.model;
     this.year = car.year;
@@ -19,71 +19,71 @@ class Car {
     this.buyValue = car.buyValue;
     this.doorsQty = car.doorsQty;
     this.seatsQty = car.seatsQty;
-   }
+  }
 
-   public setId(id: string) {
-        this.id = id;
-   }
+  public setId(id: string) {
+    this.id = id;
+  }
 
-   public getId() {
+  public getId() {
     return this.id;
-   }
+  }
   
   public setModel(model: string) {
     this.model = model;
-   }
+  }
 
-   public getModel() {
+  public getModel() {
     return this.model;
-   }
+  }
 
-   public setYear(year: number) {
+  public setYear(year: number) {
     this.year = year;
-   }
+  }
 
-   public getYear() {
+  public getYear() {
     return this.year;
-   }
+  }
 
-   public setColor(color: string) {
+  public setColor(color: string) {
     this.color = color;
-   }
+  }
 
-   public getColor() {
+  public getColor() {
     return this.color;
-   }
+  }
 
-   public setStatus(status: boolean | false ) {
+  public setStatus(status: boolean | false) {
     this.status = status;
-   }
+  }
 
-   public getStatus() {
+  public getStatus() {
     return this.status;
-   }
+  }
 
-   public setBuyValue(buyValue: number) {
-      this.buyValue = buyValue;
-     }
+  public setBuyValue(buyValue: number) {
+    this.buyValue = buyValue;
+  }
   
-     public getBuyValue() {
-      return this.buyValue;
-     }
+  public getBuyValue() {
+    return this.buyValue;
+  }
 
-   public setDoorsQty(doorsQty: number) {
+  public setDoorsQty(doorsQty: number) {
     this.doorsQty = doorsQty;
-   }
+  }
 
-   public getDoorsQty() {
+  public getDoorsQty() {
     return this.doorsQty;
-   }
+  }
 
-   public setSeatsQty(seatsQty: number) {
+  public setSeatsQty(seatsQty: number) {
     this.seatsQty = seatsQty;
-   }
+  }
 
-   public getSeatsQty() {
+  public getSeatsQty() {
     return this.seatsQty;
-   }
+  }
 }
 
 export default Car;

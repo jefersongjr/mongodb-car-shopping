@@ -10,8 +10,6 @@ class ErrorHandler {
     res.status(500).json({ message: error.message });
     next();
   }
-
 }
-
 
 export default ErrorHandler;
