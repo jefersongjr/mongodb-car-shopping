@@ -18,5 +18,4 @@ carRoute.get(
   (req, res, next) => new CarController(req, res, next).getById(),
 );
 
-
 export default carRoute; 
