@@ -29,7 +29,7 @@ class CarODM {
   }
 
   public async find(): Promise<ICar[]> {
-    return this.model.find({});
+    return this.model.find();
   }
 
   public async findById(id: string): Promise<ICar[]> {
