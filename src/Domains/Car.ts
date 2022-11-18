@@ -3,7 +3,7 @@ class Car {
    private model: string;
    private year: number;
    private  color: string;
-   private status: boolean;
+   private status: boolean | undefined ;
    private buyValue: number;
    private doorsQty: number;
    private seatsQty: number;
@@ -13,7 +13,7 @@ class Car {
     model: string,
     year: number,
     color: string,
-    status: boolean,
+    status: boolean | undefined,
     buyValue: number,
     doorsQty: number,
     seatsQty: number,
@@ -60,13 +60,21 @@ class Car {
     return this.color;
    }
 
-   public setStatus(status: boolean) {
+   public setStatus(status: boolean | false ) {
     this.status = status;
    }
 
    public getStatus() {
     return this.status;
    }
+
+   public setBuyValue(buyValue: number) {
+      this.buyValue = buyValue;
+     }
+  
+     public getBuyValue() {
+      return this.buyValue;
+     }
 
    public setDoorsQty(doorsQty: number) {
     this.doorsQty = doorsQty;
