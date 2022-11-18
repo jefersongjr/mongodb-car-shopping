@@ -20,6 +20,7 @@ class CarService {
     }
     carODM = new CarODM();
     public async addCar(car: ICar) {
+        // if(!car) throw new Error('requisição errada')!
     const newCar = await this.carODM.create(car);
 
     return this.createCarDomain(newCar)
