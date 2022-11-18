@@ -15,7 +15,7 @@ carRoute.get(
 
 carRoute.get(
   '/cars/:id',
-  (req, res, next) => new CarController(req, res, next).getCarById(),
+  (req, res, next) => new CarController(req, res, next).getById(),
 );
 
 
