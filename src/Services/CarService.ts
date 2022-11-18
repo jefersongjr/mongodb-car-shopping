@@ -5,16 +5,7 @@ import CarODM from "../Models/CarODM";
 class CarService {
     private createCarDomain(car: ICar | null): Car | undefined | null {
         if(car) {
-            return new Car(
-                car.id,
-                car.model,
-                car.year,
-                car.color,
-                car.status,
-                car.buyValue,
-                car.doorsQty,
-                car.seatsQty, 
-            );
+            return new Car(car);
         }
         return null;
     }

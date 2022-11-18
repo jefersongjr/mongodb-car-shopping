@@ -31,11 +31,6 @@ class CarController {
         };
         
         try {
-            
-        if (car.status === undefined ){
-            const newCar = await this.service.addCar({...car, status: false});
-            return this.res.status(201).json(newCar);
-        }
         const newCar = await this.service.addCar(car);
         return this.res.status(201).json(newCar);
 
