@@ -23,7 +23,7 @@ describe('Testa a Service da rota "/cars"', function () {
     expect(result).to.be.deep.equal(carOutput);
   });
   
-  it('Testa a rota get que lista um carro por ID', async function () {    
+  it('Testa a a mensagem quando o id não esta no formato certo', async function () {    
     sinon.stub(Model, 'find').resolves(carOutput);
     try {
       const service = new CarService();
@@ -35,5 +35,14 @@ describe('Testa a Service da rota "/cars"', function () {
   
   afterEach(function () {
     sinon.restore();
+  });
+  it('Testa a a mensagem quando o id do carro não existe', async function () {    
+    sinon.stub(Model, 'find').resolves(carOutput);
+    try {
+      const service = new CarService();
+      await service.getOneCarsById('634852326b35b59438fbea31');
+    } catch (error) {
+      expect((error as Error).message).to.be.equal('Car not found');
+    }
   });
 });
