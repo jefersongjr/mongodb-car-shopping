@@ -44,10 +44,10 @@ describe('Testa a Service da rota "/cars"', function () {
   });
     
   it('Testa a rota get "car/:id" lista um carro por id', async function () {    
-     sinon.stub(Model, 'find').resolves(carOutput);
-     const service = new CarService();
-     const resultado = await service.getOneCarsById('634852326b35b59438fbea2f');
-      expect(resultado).to.be.deep.equal(carOutput[0]);   
+    sinon.stub(Model, 'find').resolves(carOutput);
+    const service = new CarService();
+    const resultado = await service.getOneCarsById('634852326b35b59438fbea2f');
+    expect(resultado).to.be.deep.equal(carOutput[0]);   
   });
 
   afterEach(function () {
