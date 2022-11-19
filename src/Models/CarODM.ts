@@ -39,10 +39,10 @@ class CarODM {
     return this.model.find({ id });
   }
 
-  public async updateCar(_id: string, obj: Object): Promise<ICar | null> {
-  if (!isValidObjectId(_id)) throw new ThrowException(422, 'Invalid mongo id');
+  public async updateCar(_id: string, obj: ICar): Promise<ICar | null> {
+    if (!isValidObjectId(_id)) throw new ThrowException(422, 'Invalid mongo id');
 
-   return this.model.findByIdAndUpdate(
+    return this.model.findByIdAndUpdate(
       { _id },
       { ...obj } as UpdateQuery<ICar>,
       { new: true },
