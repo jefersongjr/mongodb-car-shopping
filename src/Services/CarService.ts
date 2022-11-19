@@ -38,6 +38,7 @@ class CarService {
    
     public async updateCars(id: string, car: ICar) {    
     const response = await this.carODM.updateCar(id, car);
+    
     if (!response) throw new ThrowException(404, 'Car not found');
     const carUpdated = [response].map((car) => this.createCarDomain(car));
       

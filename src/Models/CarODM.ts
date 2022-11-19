@@ -45,6 +45,7 @@ class CarODM {
    return this.model.findByIdAndUpdate(
       { _id },
       { ...obj } as UpdateQuery<ICar>,
+      { new: true },
     );
   }
 }

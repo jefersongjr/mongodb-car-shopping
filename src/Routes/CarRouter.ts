@@ -18,7 +18,7 @@ carRoute.get(
   (req, res, next) => new CarController(req, res, next).getById(),
 );
 
-carRoute.patch(
+carRoute.put(
   '/cars/:id',
   (req, res, next) => new CarController(req, res, next).updateCarById(),
 );

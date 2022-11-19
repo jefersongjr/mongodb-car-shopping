@@ -58,12 +58,22 @@ class CarController {
   }
 
   public async updateCarById() {
-    const car : ICar = { ...this.req.body };
     const { id } = this.req.params;
+    const car : ICar = { 
+        model: this.req.body.model,  
+        year: this.req.body.year,
+        color: this.req.body.color,
+        status: this.req.body.status,
+        buyValue: this.req.body.buyValue,
+        doorsQty: this.req.body.doorsQty,
+        seatsQty: this.req.body.seatsQty,  
+     };
     try {
       const { id } = this.req.params;
       const updateCar = await this.service.updateCars(id, car);
-      return this.res.status(200).json(updateCar);
+      console.log(...updateCar);
+      
+      return this.res.status(200).json(...updateCar);
     } catch (error) {
       this.next(error);
     }
