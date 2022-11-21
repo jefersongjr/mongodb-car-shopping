@@ -8,13 +8,11 @@ import {
 } from 'mongoose';
 import ICar from '../Interfaces/ICar';
 import ThrowException from '../Middlewares/exceptions/ThrowException';
+import AbstractODM from './AbstractODM';
 
-class CarODM {
-  private schema: Schema;
-  private model: Model<ICar>;
-
+class CarODM extends AbstractODM<ICar> {
   constructor() {
-    this.schema = new Schema<ICar>({
+    const schema = new Schema<ICar>({
       model: { type: String, required: true },
       year: { type: Number, required: true },
       color: { type: String, required: true },
@@ -24,29 +22,7 @@ class CarODM {
       seatsQty: { type: Number, required: true },
     });
         
-    this.model = models.cars || model('cars', this.schema);
-  }
-
-  public async create(car: ICar): Promise<ICar> {
-    return this.model.create({ ...car });
-  }
-
-  public async find(): Promise<ICar[]> {
-    return this.model.find();
-  }
-
-  public async findById(id: string): Promise<ICar[]> {
-    return this.model.find({ id });
-  }
-
-  public async updateCar(_id: string, obj: ICar): Promise<ICar | null> {
-    if (!isValidObjectId(_id)) throw new ThrowException(422, 'Invalid mongo id');
-
-    return this.model.findByIdAndUpdate(
-      { _id },
-      { ...obj } as UpdateQuery<ICar>,
-      { new: true },
-    );
+    super(schema, 'cars');
   }
 }
 
