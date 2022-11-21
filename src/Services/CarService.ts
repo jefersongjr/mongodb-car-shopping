@@ -38,7 +38,7 @@ class CarService {
    
   public async updateCars(id: string, car: ICar) {
     if (!ObjectId.isValidObjectId(id)) throw new ThrowException(422, 'Invalid mongo id');
-    const response = await this.carODM.updateCar(id, car);
+    const response = await this.carODM.updateById(id, car);
     
     if (!response) throw new ThrowException(404, 'Car not found');
     const carUpdated = [response].map((item) => this.createCarDomain(item));
