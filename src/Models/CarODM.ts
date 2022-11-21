@@ -1,13 +1,7 @@
 import {
-  isValidObjectId,
-  Model,
-  model,
-  models,
   Schema,
-  UpdateQuery,
 } from 'mongoose';
 import ICar from '../Interfaces/ICar';
-import ThrowException from '../Middlewares/exceptions/ThrowException';
 import AbstractODM from './AbstractODM';
 
 class CarODM extends AbstractODM<ICar> {
