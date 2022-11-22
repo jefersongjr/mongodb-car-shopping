@@ -26,7 +26,6 @@ class MotorcycleService {
 
   public async getMotorcycles() {
     const allMotorcycles = await this.motorcycleODM.find();
-    if (!allMotorcycles) throw new ThrowException(422, 'Schema vázio');
     console.log(allMotorcycles)
     const motorcyclesArray = allMotorcycles.map((motorcycle) => this.createMotorcycleDomain(motorcycle));
 
