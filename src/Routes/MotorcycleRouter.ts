@@ -18,5 +18,4 @@ MotorcycleRoute.get(
   (req, res, next) => new MotorcycleController(req, res, next).getById(),
 );
 
-
 export default MotorcycleRoute; 
