@@ -57,6 +57,25 @@ class MotorcycleController {
       this.next(error);
     }
   }
+
+  public async updateMotorcycleById() {
+    try {
+      const motorcycle : IMotorcycle = { 
+        model: this.req.body.model,  
+        year: this.req.body.year,
+        color: this.req.body.color,
+        status: this.req.body.status,
+        buyValue: this.req.body.buyValue,
+        category: this.req.body.category,
+        engineCapacity: this.req.body.engineCapacity,  
+      };
+      const { id } = this.req.params;
+      const updatedMotorcycle = await this.service.updateMotorcycles(id, motorcycle);
+      return this.res.status(200).json(...updatedMotorcycle);
+    } catch (error) {
+      this.next(error);
+    }
+  }
 } 
 
 export default MotorcycleController;
